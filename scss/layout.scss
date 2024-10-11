@@ -10,17 +10,24 @@
 
     &__page {
         width: 100%;
-        padding: 5rem 15rem 0rem 15rem;
+        padding: 5rem 16vw 0vw 16vw;
         overflow-y: scroll;
     }
     
+}
+
+
+.no-scrollbar {
+    &::-webkit-scrollbar {
+      display: none;
+    }
 }
 
 // Tablet screen layout - different paddings
 @media only screen and (max-width: 768px) {
     .blog-app-layout {
         &__page {
-            // new padding for tablet
+            padding: 5rem 16vw 0vw 16vw;
         }
     }
 }
@@ -39,7 +46,6 @@
 
         &__page {
             min-height: 100vh;
-            // new padding for mobile
         }
     }
 

@@ -2,21 +2,15 @@
 
 <div class="blog-app-layout">
     <div class="blog-app-layout__nav">
-        <div class="nav-bar">
-            <button class="icon-button icon-button--fill-icon">
-                <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
-            </button>
-            <button class="icon-button icon-button--fill-icon ">
-                <span class="material-symbols-outlined" style="color: var(--icon-color);">settings</span>
-            </button>
-            <button class="icon-button icon-button--fill-icon nav-bar__menu">
-                <span class="material-symbols-outlined" style="color: var(--icon-color);">menu</span>
-            </button>
-        </div>   
+        <%- include ("partials/nav-bar.ejs") %>
     </div>
 
-    <div class="blog-app-layout__page bg-[var(--yellow-sand-100)]">
-        
+    <div class="blog-app-layout__page bg-[var(--yellow-sand-100)] no-scrollbar">
+        <!-- Dynamic page here? -->
+         <% if(locals.pageTitle) { %>
+            <%- include (pageTitle + ".ejs") %> 
+         <% } %>
+         <!-- Or probably render a whole new page entirely with partials -->
     </div>
 
 </div>
