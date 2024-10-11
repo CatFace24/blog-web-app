@@ -94,7 +94,7 @@ app.get("/new-post", (req, res) => {
     const date = new Date().toLocaleDateString();
     const content = "Dummy content";
 
-    testPosts.push(
+    testPosts.unshift(
         { 
             id: uuidv4(),
             title: title,
