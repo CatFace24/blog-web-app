@@ -66,7 +66,7 @@ app.post("/vault", (req, res) => {
 
 // View article / post
 app.get("/article/:id", (req, res) => {
-    const page = "vault";
+    const page = "article";
     const { id } = req.params;
 
     // obtain the right article
@@ -77,8 +77,9 @@ app.get("/article/:id", (req, res) => {
 
     console.log(articleObj);
 
-    res.render("article.ejs", {
-        article: articleObj
+    res.render("blog-app.ejs", {
+        article: articleObj,
+        pageTitle: page
     });
 
 });
