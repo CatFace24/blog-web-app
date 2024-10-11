@@ -1,9 +1,13 @@
+<!-- Logic to dynamically load posts based on array -->
+
+<% for(let i=0; i<posts.length; i++) { %>
+
 <div class="post" id="post-1">
-    <span class="post__title">I Wrote on LinkedIn for 100 Days. Now I Never Worry About Finding a Job</span>
-    <span class="post__subtitle">Everyone is hiring.</span>
+    <span class="post__title"><%=posts[i].title%></span>
+    <span class="post__subtitle"><%=posts[i].subtitle%></span>
     <div class="actions flex items-center justify-between">
         <div class="post-stats items-center flex gap-2 sm:gap-4">
-            <span class="caption">9 Oct, 2024</span>
+            <span class="caption"><%=posts[i].date%></span>
             <div class="favourites flex items-center gap-[0.25rem]">
                 <span class="material-symbols-outlined" style="color: var(--icon-color); font-variation-settings: 'FILL' 1">favorite</span>
                 <span class="caption">40</span>
@@ -17,9 +21,14 @@
             <button class="icon-button icon-button--square icon-button--outline-icon">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">edit</span>
             </button>
-            <button class="icon-button icon-button--square icon-button--outline-icon">
-                <span class="material-symbols-outlined" style="color: var(--icon-color);">delete</span>
-            </button>
+
+            <form action="/vault/<%=posts[i].id%>?_method=DELETE" method="POST">
+                <button class="icon-button icon-button--square icon-button--outline-icon">
+                    <span class="material-symbols-outlined" style="color: var(--icon-color);">delete</span>
+                </button>
+            </form>
+
         </div>
     </div>
 </div>
+<% } %>

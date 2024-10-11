@@ -8,7 +8,6 @@
     "dev": "nodemon index.js & npm run scss & npm run tailwind:css",
     "scss": "sass --watch scss/index.scss:public/styles/index.css",
     "tailwind:css": "npx tailwindcss -i public/styles/tailwind.css -o public/styles/main.css --watch"
-
   },
   "keywords": [],
   "author": "",
@@ -17,8 +16,10 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "method-override": "^3.0.0",
     "sass": "^1.79.4",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "postcss": "^8.4.47",
