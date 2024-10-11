@@ -1,0 +1,58 @@
+.icon-button {
+
+    $parent: &;
+
+    display: flex;
+    max-width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    gap: 0.5rem;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-variation-settings: 'FILL' 0;
+    --icon-color: var(--darks-default);
+
+    // fill modifier
+    &--fill {
+        width: 100%;
+    }
+
+    // variant 1: icon 'fills' when active
+    &--fill-icon {
+        &:hover {
+            --icon-color: var(--purple-primary-400);
+        }
+    
+        &:active {
+            font-variation-settings: 'FILL' 1;
+            --icon-color: var(--purple-primary-400);
+    
+        }
+    
+        // An extra class for active state without the background colour change
+        &#{$parent}--active {
+            font-variation-settings: 'FILL' 1;
+            --icon-color: var(--purple-primary-400);
+        }
+    }
+
+    // variant 2: icon remains 'outline' when active
+    &--outline-icon {
+        &:hover {
+            --icon-color: var(--purple-primary-400);
+        }
+    
+        &:active {
+            --icon-color: var(--purple-primary-400);
+    
+        }
+    
+        // An extra class for active state without the background colour change
+        &#{$parent}--active {
+            --icon-color: var(--purple-primary-400);
+        }
+    }
+
+}
+

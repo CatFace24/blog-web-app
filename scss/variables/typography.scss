@@ -1,0 +1,166 @@
+/* root for web */
+:root {
+    /* UI */
+    --h1-font-size: 3.5rem;
+    --h1-line-height: 4rem;
+    --h2-font-size: 2.5rem;
+    --h2-line-height: 3rem;
+    --h3-font-size: 2rem;
+    --h3-line-height: 2.5rem;
+    --content-font-size: 1.5rem;
+    --content-line-height: 2.5rem;
+    --body-font-size: 1.25rem;
+    --body-line-height: 1.75rem;
+    --subtext-font-size: 1rem;
+    --subtext-line-height: 1.5rem;
+    --caption-font-size: 0.75rem;
+    --caption-line-height: 1rem;
+
+    /* Components */
+    --button-font-size: 1rem;
+    --button-line-height: 1.5rem;
+
+    --menu-font-size: 1rem;
+    --menu-line-height: 1.5rem;
+
+    --chip-font-size: 0.75rem;
+    --chip-line-height: 1rem;
+    
+    /* only input has different font sizes for desktop and mobile */
+    --input-font-size: var(--body-font-size);
+    --input-line-height: var(--body-line-height);
+
+}
+
+/* root for mobile */
+@media only screen and (max-width: 480px) {
+    :root {
+        /* UI */
+        --h1-font-size: 2rem;
+        --h1-line-height: 2.5rem;
+        --h2-font-size: 2rem;
+        --h2-line-height: 2.5rem;
+        --h3-font-size: 1.5rem;
+        --h3-line-height: 2rem;
+        --content-font-size: 1rem;
+        --content-line-height: 1.5rem;
+        --body-font-size: 1rem;
+        --body-line-height: 1.5rem;
+        --subtext-font-size: 0.875rem;
+        --subtext-line-height: 1.25rem;
+        --caption-font-size: 0.75rem;
+        --caption-line-height: 1rem;
+    }
+
+}
+
+/* UI Typography */
+h1,
+.h1 {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+}
+
+h2,
+.h2 {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+}
+
+h3,
+.h3 {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+}
+
+.content {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+}
+
+p,
+.body {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+}
+
+.body--bold {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+}
+
+.subtext {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--subtext-font-size);
+    line-height: var(--subtext-line-height);
+
+    &--bold{
+        color: var(--purple-primary-400);
+        font-weight: bold;
+    }
+}
+
+.caption {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+
+    &--bold {
+        color: var(--purple-primary-400);
+        font-weight: bold;
+    }
+}
+
+.button {
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--button-font-size);
+    line-height: var(--button-line-height);
+}
+
+.text-input {
+    font-family: "Montserrat", serif;
+    font-size: var(--input-font-size);
+    line-height: var(--input-line-height);
+}
+
+.menu-item {
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--menu-font-size);
+    line-height: var(--menu-line-height);
+}
+
+label {
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    color: var(--purple-primary-400);
+    font-size: var(--input-font-size);
+    line-height: var(--input-line-height);
+
+    &:disabled {
+        color: var(--darks-disabled);
+    }
+}

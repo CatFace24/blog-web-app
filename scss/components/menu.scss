@@ -1,0 +1,34 @@
+@use "../variables/typography" as *;
+
+.menu {
+
+    $parent: &;
+
+    background: var(--yellow-sand-100);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: grid;
+    width: 12.5rem;
+
+    &__item {
+        @extend .menu-item;
+        display: flex;
+        width: 100%;
+        gap: 0.5rem;
+        padding: 1rem;
+        color: var(--darks-default);
+        --icon-color: var(--darks-default);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--purple-primary-400);
+            --icon-color: var(--purple-primary-400);
+        }
+        &:active,
+        &#{$parent}--active{
+            color: var(--purple-primary-400);
+            --icon-color: var(--purple-primary-400);
+        }
+
+    }
+}

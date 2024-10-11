@@ -1,0 +1,121 @@
+@use "../variables/typography" as *;
+
+.button {
+
+    display: flex;
+    max-width: 100%;
+    max-height: 3rem;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+    /* fully rounded */
+    width: fit-content;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-variation-settings: 'FILL' 1;
+
+    &--fill {
+        width: 100%;
+    }
+
+    &__text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    // Primary button
+    &--primary {
+        @extend .button;
+        background: var(--purple-primary-400);
+        color: var(--neutrals-white);
+        --icon-color: var(--neutrals-white);
+
+        &:hover {
+            background: var(--purple-primary-500);
+        }
+
+        &:active {
+            background: var(--purple-primary-600);
+        }
+
+        &:disabled {
+            background: var(--darks-disabled);
+            cursor: not-allowed;
+        }
+
+    }
+
+    // Secondary button
+    &--secondary {
+        @extend .button;
+
+        --border-size: 1px;
+        $size: var(--border-size);
+        $top: 0.75rem;;
+        $right: 1rem;
+        $bottom: 0.75rem;
+        $left: 1rem;
+      
+        box-sizing: border-box;
+        border-width: var(--border-size);
+        padding: calc($top - $size) calc($right - $size) calc($bottom - $size) calc($left - $size);
+
+        border-style: solid;
+        border-color: var(--purple-primary-400);
+
+        background: var(--yellow-sand-100);
+        color: var(--purple-primary-400);
+        --icon-color: var(--purple-primary-400);
+
+        &:hover {
+            background: var(--yellow-sand-200);
+        }
+
+        &:active {
+            background: var(--yellow-sand-300);
+            color: var(--purple-primary-500);
+            --icon-color: var(--purple-primary-500);
+            border-color: var(--purple-primary-500);
+
+        }
+
+        &:disabled {
+            background: var(--yellow-sand-100);
+            color: var(--darks-disabled);
+            --icon-color: var(--darks-disabled);
+            border-color: var(--darks-disabled);
+            cursor: not-allowed;
+        }
+
+    }
+
+    // Tertiary button
+    &--tertiary {
+        @extend .button;
+        background: var(--yellow-sand-100);
+        color: var(--darks-default);
+        --icon-color: var(--purple-primary-400);
+
+        &:hover {
+            background: var(--yellow-sand-200);
+            color: var(--purple-primary-400);
+        }
+
+        &:active {
+            background: var(--yellow-sand-300);
+            color: var(--purple-primary-500);
+            --icon-color: var(--purple-primary-500);
+        }
+
+        &:disabled {
+            background: var(--yellow-sand-100);
+            color: var(--darks-disabled);
+            --icon-color: var(--darks-disabled);
+            cursor: not-allowed;
+
+        }
+
+    }
+
+}

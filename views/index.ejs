@@ -1,0 +1,107 @@
+<%- include ("partials/header.ejs") %>
+
+<h1 class="test">Hi</h1>
+
+<div class="bg-black h-auto p-4 sm:p-4 md:p-6 lg:p-8 text-white">
+    <span>Testing Tailwind</span>
+</div>
+<div style="font-variation-settings: 'FILL' 1;">
+    Testing Material Symbols
+    <span class="material-symbols-outlined" style="color: pink;">home</span>
+</div>
+
+<div class="p-8">
+    Testing typography
+    <h1>H1 heading</h1>
+    <h2>H2 heading</h2>
+    <h3>H3 heading</h3>
+    <p class="body--bold">Body bold</p>
+    <p>Body regular</p>
+    <p class="subtext subtext--bold">Subtext bold</p>
+    <p class="subtext">Subtext regular</p>
+    <p class="caption caption--bold">Caption bold</p>
+    <p class="caption">Caption regular</p>
+    <p class="content">Content with very long text</p>
+</div>
+
+<div class="grid p-8 gap-[2rem]">
+    Testing components
+    <p class="body--bold">Buttons</p>
+
+    <button class="button button--primary">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+        <span class="button__text">Primary Button</span>
+    </button>
+
+    <button class="button button--secondary">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+        <span class="button__text">Secondary Button</span>
+    </button>
+
+    <button class=" button button--tertiary button--fill">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+        <span class="button__text">Secondary Button</span>
+    </button>
+
+    <p class="body-bold">Icon button (side nav/fill icon)</p>
+    <button class="icon-button icon-button--fill-icon">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+    </button>
+
+    <p class="body-bold">Icon button (outline icon)</p>
+    <button class="icon-button icon-button--outline-icon">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+    </button>
+
+    <p class="body-bold">Inputs (responsive)</p>
+    <form class="grid gap-4" id="post">
+        <div class="text-input">       
+            <label>Text Input</label>
+            <input class="text-input__input" type="text" id="post-title" placeholder="Title">
+        </div>
+        <div class="textarea">           
+            <label>Text Area</label>
+            <textarea class="textarea__input" id="post-content" placeholder="Write your story..."></textarea>
+        </div>
+    </form>
+
+    <p class="body-bold">Menu (mobile)</p>
+    <div class="menu">
+        <a class="menu__item" id="write-story">
+            <span class="material-symbols-outlined"style="color: var(--icon-color);">edit_square</span>
+            <span>Write a story</span>
+        </a>
+        <a class="menu__item" id="settings">
+            <span class="material-symbols-outlined" style="color: var(--icon-color);">settings</span>
+            <span>Setting</span>
+        </a>
+    </div>
+
+    <p class="body-bold">Nav bar (responsive)<p>
+    <div class="nav-bar">
+        <button class="icon-button icon-button--fill-icon">
+            <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+        </button>
+        <button class="icon-button icon-button--fill-icon ">
+            <span class="material-symbols-outlined" style="color: var(--icon-color);">settings</span>
+        </button>
+        <button class="icon-button icon-button--fill-icon nav-bar__menu">
+            <span class="material-symbols-outlined" style="color: var(--icon-color);">menu</span>
+        </button>
+    </div>
+
+    <p class="body-bold">Post header (mobile only)<p>
+        <div class="post-header">
+            <button class="icon-button icon-button--outline-icon post-header__icon-button">
+                <span class="material-symbols-outlined" style="color: var(--icon-color);">close</span>
+            </button>            
+            <button class="button button--primary post-header__button">
+                <span class="button__text">Save</span>
+            </button>
+        </div>
+</div>
+
+
+
+<%- include ("partials/footer.ejs") %>
+

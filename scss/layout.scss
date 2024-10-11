@@ -1,0 +1,46 @@
+// Desktop screen layout
+.blog-app-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &__nav {
+        min-height: 100vh;
+    }
+
+    &__page {
+        width: 100%;
+        padding: 5rem 15rem 0rem 15rem;
+        overflow-y: scroll;
+    }
+    
+}
+
+// Tablet screen layout - different paddings
+@media only screen and (max-width: 768px) {
+    .blog-app-layout {
+        &__page {
+            // new padding for tablet
+        }
+    }
+}
+
+
+
+// Mobile screen layout
+@media only screen and (max-width: 480px) {
+    .blog-app-layout {
+        display: flex;
+        flex-direction: column;
+
+        &__nav {
+            min-height: 3.5rem;
+        }
+
+        &__page {
+            min-height: 100vh;
+            // new padding for mobile
+        }
+    }
+
+}

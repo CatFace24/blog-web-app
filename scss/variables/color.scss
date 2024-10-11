@@ -1,0 +1,22 @@
+/* Primitive colours */
+
+:root {
+    --purple-primary-100 : #D6CFE5;
+    --purple-primary-200: #AEA3C4;
+    --purple-primary-300: #8E7DB2;
+    --purple-primary-400: #24104E;
+    --purple-primary-500: #24104E;
+    --purple-primary-600: #100625;
+
+    --yellow-sand-100: #F8F3ED;
+    --yellow-sand-200: #E7E1D9;
+    --yellow-sand-300: #D0C7BC;
+
+    --neutrals-white: #FFFFFF;
+    --neutrals-grey-medium: #A9AEBA;
+    --neutrals-grey-dark: #68627B;
+
+    --darks-default: var(--neutrals-grey-dark);
+    --darks-disabled: var(--neutrals-grey-medium);
+
+}

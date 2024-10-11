@@ -1,0 +1,13 @@
+.post-header {
+    display: flex;
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 0.75rem ;
+    background: var(--yellow-sand-100);
+    justify-content: space-between;
+
+    &__icon-button {
+        padding: 0.75rem;
+
+    }
+
+}
