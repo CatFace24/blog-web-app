@@ -18,12 +18,15 @@ app.use(methodOverride("_method"));
 
 
 // handling GET requests
+
+// This is supposed to be 'home'
 app.get("/", (req, res) => {
-    const page = "home";
-    const activeTab = "home"
+    const page = "vault";
+    const activeTab = "vault"
 
     res.render("blog-app.ejs", {
         pageTitle : page,
+        posts: testPosts,
         activeTab: activeTab
     });
 })
