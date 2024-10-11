@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // handling requests
 app.get("/", (req, res) => {
-    const page = "home"
+    const page = "home";
     res.render("blog-app.ejs", {
         pageTitle : page
     });
@@ -23,40 +23,41 @@ app.get("/", (req, res) => {
 
 app.get("/design-dump", (req, res) => {
     res.render("index.ejs");
+
 });
 
 // posting for tabs
 
 app.post("/home", (req, res) => {
-    const page = "home"
+    const page = "home";
     res.render("blog-app.ejs", {
         pageTitle : page
     });
 });
 
 app.post("/notifications", (req, res) => {
-    const page = "notifications"
+    const page = "notifications";
     res.render("blog-app.ejs", {
         pageTitle : page
     });
 });
 
 app.post("/bookmarks", (req, res) => {
-    const page = "bookmarks"
+    const page = "bookmarks";
     res.render("blog-app.ejs", {
         pageTitle : page
     });
 });
 
 app.post("/vault", (req, res) => {
-    const page = "vault"
+    const page = "vault";
     res.render("blog-app.ejs", {
         pageTitle : page
-    });
+        });
 });
 
 app.post("/write", (req, res) => {
-    const page = "write"
+    const page = "write";
     res.render("blog-app.ejs", {
         pageTitle : page
     });

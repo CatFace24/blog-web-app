@@ -10,6 +10,7 @@
   --yellow-sand-200: #E7E1D9;
   --yellow-sand-300: #D0C7BC;
   --neutrals-white: #FFFFFF;
+  --neutrals-grey-light: #F2F2F2;
   --neutrals-grey-medium: #A9AEBA;
   --neutrals-grey-dark: #68627B;
   --darks-default: var(--neutrals-grey-dark);
@@ -118,14 +119,14 @@ p,
   line-height: var(--body-line-height);
 }
 
-.subtext {
+.subtext, .tab-item {
   color: var(--darks-default);
   font-family: "Montserrat", serif;
   font-weight: regular;
   font-size: var(--subtext-font-size);
   line-height: var(--subtext-line-height);
 }
-.subtext--bold {
+.subtext--bold, .tab-item:active, .tab-item--active {
   color: var(--purple-primary-400);
   font-weight: bold;
 }
@@ -428,6 +429,28 @@ label:disabled {
   padding: 0.75rem;
 }
 
+.tab {
+  display: flex;
+  background: var(--yellow-sand-100);
+  border-bottom: 1px solid var(--neutrals-grey-light);
+}
+
+.tab-item {
+  border-bottom: 1px solid transparent;
+  padding: 1.5rem;
+  padding-bottom: calc(1.5rem - 1px);
+  cursor: pointer;
+}
+.tab-item:active, .tab-item--active {
+  color: var(--purple-primary-400);
+  border-bottom: 1px solid var(--purple-primary-400);
+}
+
+@media only screen and (max-width: 480px) {
+  .tab-item {
+    padding: 0.75rem;
+  }
+}
 .blog-app-layout {
   display: flex;
   width: 100%;

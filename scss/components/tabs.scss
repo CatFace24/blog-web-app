@@ -1,0 +1,33 @@
+@use "../variables/typography" as *;
+
+.tab{
+    display: flex;
+    background: var(--yellow-sand-100);
+    border-bottom: 1px solid var(--neutrals-grey-light);
+}
+
+.tab-item {
+    @extend .subtext;
+    
+    $border-size: 1px;
+    border-bottom: $border-size solid transparent;
+    padding: 1.5rem;
+    padding-bottom: calc(1.5rem - $border-size);
+    cursor: pointer;
+
+
+    &:active,
+    &--active{
+        @extend .subtext--bold;
+        color: var(--purple-primary-400);
+        border-bottom: 1px solid var(--purple-primary-400);
+    }
+
+}
+
+//   Small - mobile
+@media only screen and (max-width: 480px) {
+    .tab-item {
+        padding: 0.75rem;
+    }
+}
