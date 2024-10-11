@@ -2,27 +2,27 @@
     <div class="nav-bar__icon-buttons">
 
         <form action="/home" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= pageTitle == 'home' ? 'icon-button--active' : '' %>"">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'home' ? 'icon-button--active' : '' %>"">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
             </button>
         </form>
         <form action="/notifications" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= pageTitle == 'notifications' ? 'icon-button--active' : '' %>">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'notifications' ? 'icon-button--active' : '' %>">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">notifications</span>
             </button>
         </form>
         <form action="/bookmarks" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= pageTitle == 'bookmarks' ? 'icon-button--active' : '' %>">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'bookmarks' ? 'icon-button--active' : '' %>">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">bookmarks</span>
             </button>
         </form>
         <form action="/vault" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= pageTitle == 'vault' || 'article' ? 'icon-button--active' : '' %>" onclick="">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'vault' ? 'icon-button--active' : '' %>" onclick="">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">article</span>
             </button>
         </form>
         <form action="/write" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= pageTitle == 'write' ? 'icon-button--active' : '' %>">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'write' ? 'icon-button--active' : '' %>">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">edit_square</span>
             </button>
         </form>
@@ -30,7 +30,7 @@
     </div>
 
     <form action="/settings" method="POST">
-        <button class="icon-button icon-button--fill-icon <%= pageTitle == 'settings' ? 'icon-button--active' : '' %>">
+        <button class="icon-button icon-button--fill-icon <%= activeTab == 'settings' ? 'icon-button--active' : '' %>">
             <span class="material-symbols-outlined" style="color: var(--icon-color);">settings</span>
         </button>
     </form>

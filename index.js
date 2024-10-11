@@ -20,8 +20,11 @@ app.use(methodOverride("_method"));
 // handling GET requests
 app.get("/", (req, res) => {
     const page = "home";
+    const activeTab = "home"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 })
 
@@ -32,9 +35,12 @@ app.get("/design-dump", (req, res) => {
 
 app.get("/vault", (req, res) => {
     const page = "vault";
+    const activeTab = "vault"
+
     res.render("blog-app.ejs", {
         pageTitle : page,
-        posts: testPosts
+        posts: testPosts,
+        activeTab: activeTab
         });
 });
 
@@ -58,15 +64,19 @@ let testPosts = [
 
 app.post("/vault", (req, res) => {
     const page = "vault";
+    const activeTab = "vault"
+
     res.render("blog-app.ejs", {
         pageTitle : page,
-        posts: testPosts
+        posts: testPosts,
+        activeTab: activeTab
         });
 });
 
 // View article / post
 app.get("/article/:id", (req, res) => {
     const page = "article";
+    const activeTab = "vault"
     const { id } = req.params;
 
     // obtain the right article
@@ -79,7 +89,8 @@ app.get("/article/:id", (req, res) => {
 
     res.render("blog-app.ejs", {
         article: articleObj,
-        pageTitle: page
+        pageTitle: page,
+        activeTab: activeTab
     });
 
 });
@@ -118,37 +129,52 @@ app.delete("/vault/:id", (req, res) => {
 // handling other tabs
 app.post("/home", (req, res) => {
     const page = "home";
+    const activeTab = "home"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 });
 
 app.post("/notifications", (req, res) => {
     const page = "notifications";
+    const activeTab = "notifications"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 });
 
 app.post("/bookmarks", (req, res) => {
     const page = "bookmarks";
+    const activeTab = "bookmarks"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 });
 
 
 app.post("/write", (req, res) => {
     const page = "write";
+    const activeTab = "write"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 });
 
 app.post("/settings", (req, res) => {
     const page = "settings"
+    const activeTab = "vault"
+
     res.render("blog-app.ejs", {
-        pageTitle : page
+        pageTitle : page,
+        activeTab: activeTab
     });
 });
 
