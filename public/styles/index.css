@@ -77,7 +77,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.vault-page__header {
   color: var(--purple-primary-400);
   font-family: "Montserrat", serif;
   font-weight: bold;
@@ -86,7 +87,8 @@ h2,
 }
 
 h3,
-.h3 {
+.h3,
+.post__title {
   color: var(--purple-primary-400);
   font-family: "Montserrat", serif;
   font-weight: bold;
@@ -103,7 +105,8 @@ h3,
 }
 
 p,
-.body {
+.body,
+.post__subtitle {
   color: var(--darks-default);
   font-family: "Montserrat", serif;
   font-weight: regular;
@@ -119,7 +122,7 @@ p,
   line-height: var(--body-line-height);
 }
 
-.subtext, .tab-item {
+.subtext, .vault-page__subheader, .tab-item {
   color: var(--darks-default);
   font-family: "Montserrat", serif;
   font-weight: regular;
@@ -272,6 +275,9 @@ label:disabled {
 }
 .icon-button--fill {
   width: 100%;
+}
+.icon-button--square {
+  padding: 0.5rem;
 }
 .icon-button--fill-icon:hover {
   --icon-color: var(--purple-primary-400);
@@ -458,9 +464,11 @@ label:disabled {
 }
 .blog-app-layout__nav {
   min-height: 100vh;
+  max-height: 100vh;
 }
 .blog-app-layout__page {
   width: 100%;
+  max-height: 100vh;
   padding: 5rem 16vw 0vw 16vw;
   overflow-y: scroll;
 }
@@ -471,7 +479,7 @@ label:disabled {
 
 @media only screen and (max-width: 768px) {
   .blog-app-layout__page {
-    padding: 5rem 16vw 0vw 16vw;
+    padding: 5rem 8vw 0vw 8vw;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -484,6 +492,58 @@ label:disabled {
   }
   .blog-app-layout__page {
     min-height: 100vh;
+  }
+}
+.vault-page__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--neutrals-grey-medium);
+  --icon-color: var(--darks-default);
+}
+@media only screen and (max-width: 480px) {
+  .vault-page__wrapper {
+    gap: 1rem;
+  }
+  .vault-page__header {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+  }
+  .vault-page__subheader {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+  }
+  .post {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .post__title {
+    color: var(--purple-primary-400);
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+  }
+  .post__subtitle {
+    color: var(--darks-default);
+    font-family: "Montserrat", serif;
+    font-weight: regular;
+    font-size: var(--subtext-font-size);
+    line-height: var(--subtext-line-height);
   }
 }
 

@@ -15,6 +15,9 @@
 // Layout
 @use "./layout.scss";
 
+// UI related SCSS (eg: posts and paragraphs)
+@use "./ui.scss"; 
+
 
 // // Tailwind
 // @import "tailwindcss/components";

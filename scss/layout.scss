@@ -6,10 +6,12 @@
 
     &__nav {
         min-height: 100vh;
+        max-height: 100vh;
     }
 
     &__page {
         width: 100%;
+        max-height: 100vh;
         padding: 5rem 16vw 0vw 16vw;
         overflow-y: scroll;
     }
@@ -27,7 +29,7 @@
 @media only screen and (max-width: 768px) {
     .blog-app-layout {
         &__page {
-            padding: 5rem 16vw 0vw 16vw;
+            padding: 5rem 8vw 0vw 8vw;
         }
     }
 }

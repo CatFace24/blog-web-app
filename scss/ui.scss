@@ -1,0 +1,87 @@
+@use "./variables/typography" as *;
+
+.vault-page{ 
+    &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+
+    &__header {
+        @extend .h2;
+    }
+
+    &__subheader {
+        @extend .subtext;
+    }
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--neutrals-grey-medium);
+    --icon-color: var(--darks-default);
+
+    &__title {
+        @extend .h3;
+    }
+
+    &__subtitle {
+        @extend .body;
+    }
+}
+
+//   Small - mobile
+@media only screen and (max-width: 480px) {
+    .vault-page{ 
+        &__wrapper {
+        gap: 1rem;
+        }
+    
+        &__header {
+            // @extend .h3;
+            // can't use @extend across media queries TT
+            color: var(--purple-primary-400);
+            font-family: "Montserrat", serif;
+            font-weight: bold;
+            font-size: var(--h3-font-size);
+            line-height: var(--h3-line-height);
+        }
+    
+        &__subheader {
+            // @extend .caption;
+            color: var(--darks-default);
+            font-family: "Montserrat", serif;
+            font-weight: regular;
+            font-size: var(--caption-font-size);
+            line-height: var(--caption-line-height);
+        }
+    }
+    
+    .post {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        &__title {
+            // @extend .body--bold
+            color: var(--purple-primary-400);
+            font-family: "Montserrat", serif;
+            font-weight: bold;
+            font-size: var(--body-font-size);
+            line-height: var(--body-line-height);
+        }
+
+        &__subtitle {
+            // @extend .subtext
+            color: var(--darks-default);
+            font-family: "Montserrat", serif;
+            font-weight: regular;
+            font-size: var(--subtext-font-size);
+            line-height: var(--subtext-line-height);
+        }
+    }
+}

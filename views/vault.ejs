@@ -1,3 +1,39 @@
-<div>
-    <h2>Your vault</h2>
+<div class="vault-page__wrapper">
+
+    <div class="flex flex-row gap-[5rem] w-full">
+        <div class="flex flex-col gap-2 w-full">
+            <span class="vault-page__header">Your vault</span>
+            <p class="vault-page__subheader">Tell the world your stories.</p>
+            <div class="tab">
+                <div class="tab-item tab-item--active">
+                    <span class="tab-item__text">Published</span>
+                </div>
+                <div class="tab-item">
+                    <span class="tab-item__text">Drafts</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="hidden sm:flex">
+            <button class="button button--primary">
+                <span class="material-symbols-outlined" style="color: var(--icon-color);">edit_square</span>
+                <span class="button__text">Write a story</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Posts -->
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+    <%- include ("partials/post.ejs") %>
+
+
+    
 </div>
+
+
+

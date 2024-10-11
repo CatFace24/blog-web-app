@@ -18,6 +18,11 @@
         width: 100%;
     }
 
+    // square modifier
+    &--square {
+        padding: 0.5rem;
+    }
+
     // variant 1: icon 'fills' when active
     &--fill-icon {
         &:hover {
