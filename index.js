@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 
-// handling requests
+// handling GET requests
 app.get("/", (req, res) => {
     const page = "home";
     res.render("blog-app.ejs", {
@@ -36,29 +36,6 @@ app.get("/vault", (req, res) => {
         pageTitle : page,
         posts: testPosts
         });
-});
-
-
-// posting for tabs
-app.post("/home", (req, res) => {
-    const page = "home";
-    res.render("blog-app.ejs", {
-        pageTitle : page
-    });
-});
-
-app.post("/notifications", (req, res) => {
-    const page = "notifications";
-    res.render("blog-app.ejs", {
-        pageTitle : page
-    });
-});
-
-app.post("/bookmarks", (req, res) => {
-    const page = "bookmarks";
-    res.render("blog-app.ejs", {
-        pageTitle : page
-    });
 });
 
 // Posts data
@@ -87,11 +64,30 @@ app.post("/vault", (req, res) => {
         });
 });
 
+// View article / post
+app.get("/article/:id", (req, res) => {
+    const page = "vault";
+    const { id } = req.params;
+
+    // obtain the right article
+    const article = testPosts.filter(c => c.id === id);
+        // This returns an array, the selected article is inside the array
+
+    const articleObj = article[0];
+
+    console.log(articleObj);
+
+    res.render("article.ejs", {
+        article: articleObj
+    });
+
+});
+
 // Create post
 app.get("/new-post", (req, res) => {
-    const { id } = req.body;
+    // const id = req.body;
 
-    // dummy data
+    // dummy data for new post
     const title = "New title";
     const subtitle = "New subtitle";
     const date = new Date().toLocaleDateString();
@@ -116,6 +112,30 @@ app.delete("/vault/:id", (req, res) => {
     testPosts = testPosts.filter(c => c.id !== id);
     res.redirect("/vault");
 });
+
+
+// handling other tabs
+app.post("/home", (req, res) => {
+    const page = "home";
+    res.render("blog-app.ejs", {
+        pageTitle : page
+    });
+});
+
+app.post("/notifications", (req, res) => {
+    const page = "notifications";
+    res.render("blog-app.ejs", {
+        pageTitle : page
+    });
+});
+
+app.post("/bookmarks", (req, res) => {
+    const page = "bookmarks";
+    res.render("blog-app.ejs", {
+        pageTitle : page
+    });
+});
+
 
 app.post("/write", (req, res) => {
     const page = "write";
