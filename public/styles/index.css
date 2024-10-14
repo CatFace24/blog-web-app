@@ -68,7 +68,8 @@
 }
 /* UI Typography */
 h1,
-.h1 {
+.h1,
+.article-page__title {
   color: var(--purple-primary-400);
   font-family: "Montserrat", serif;
   font-weight: bold;
@@ -96,7 +97,7 @@ h3,
   line-height: var(--h3-line-height);
 }
 
-.content {
+.content, .article-page__subtitle, .article-page__content {
   color: var(--darks-default);
   font-family: "Montserrat", serif;
   font-weight: regular;
@@ -509,6 +510,25 @@ label:disabled {
   border-bottom: 1px solid var(--neutrals-grey-medium);
   --icon-color: var(--darks-default);
 }
+.article-page__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.article-page__top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.article-page__heading {
+  gap: 0.5rem;
+}
+.article-page__actions {
+  border-top: 1px solid var(--neutrals-grey-medium);
+  border-bottom: 1px solid var(--neutrals-grey-medium);
+  --icon-color: var(--darks-default);
+}
+
 @media only screen and (max-width: 480px) {
   .vault-page__wrapper {
     gap: 1rem;

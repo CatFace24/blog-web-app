@@ -1,7 +1,51 @@
-<div>
-    This is the article of
-    <%= article.title %>
-    <%= article.subtitle %>
-    <%= article.date %>
-    <%= article.content %>
+<div class="article-page__wrapper">
+    <div class="article-page__top">
+        <a href="/vault">        
+            <button class=" button button--tertiary">
+                <span class="material-symbols-outlined" style="color: var(--icon-color);">arrow_back</span>
+                <span class="button__text">Back</span>
+            </button>
+        </a>
+
+        <div class="article-page__top article-page__heading">
+            <span class="article-page__title">
+                <%= article.title %>
+            </span>
+    
+            <span class="article-page__subtitle">
+                <%= article.subtitle %>
+            </span>
+        </div>
+
+        <div class="article-page__actions flex items-center justify-between">
+            <div class="post-stats items-center flex gap-2 sm:gap-[1.5rem] py-0 px-[0.5rem] sm:py-4 sm:px-[0.5rem]">
+                <span class="caption">    <%= article.date %>
+                </span>
+                <div class="favourites flex items-center gap-[0.25rem]">
+                    <span class="material-symbols-outlined" style="color: var(--icon-color); font-variation-settings: 'FILL' 1">favorite</span>
+                    <span class="caption">40</span>
+                </div>
+                <div class="comments flex items-center gap-[0.25rem]">
+                    <span class="material-symbols-outlined" style="color: var(--icon-color); font-variation-settings: 'FILL' 1">chat_bubble</span>
+                    <span class="caption">15</span>
+                </div>
+            </div>
+            <div class="post-actions flex gap-2 sm:gap-4">
+                <button class="icon-button icon-button--square icon-button--outline-icon">
+                    <span class="material-symbols-outlined" style="color: var(--icon-color);">edit</span>
+                </button>
+    
+                <form action="/vault/<%= article.id %>?_method=DELETE" method="POST">
+                    <button class="icon-button icon-button--square icon-button--outline-icon">
+                        <span class="material-symbols-outlined" style="color: var(--icon-color);">delete</span>
+                    </button>
+                </form>
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="article-page__content">
+        <%= article.content %>
+    </div>
 </div>
