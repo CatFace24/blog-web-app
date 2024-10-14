@@ -88,8 +88,6 @@ app.get("/article/:id", (req, res) => {
 
     const articleObj = article[0];
 
-    console.log(articleObj);
-
     res.render("blog-app.ejs", {
         article: articleObj,
         pageTitle: page,
@@ -123,10 +121,32 @@ app.get("/new-post", (req, res) => {
 // Delete post
 app.delete("/vault/:id", (req, res) => {
     const { id } = req.params;
-    console.log(id)
     testPosts = testPosts.filter(c => c.id !== id);
     res.redirect("/vault");
 });
+
+
+// Edit post
+app.post("/edit/:id", (req, res) => {
+    const page = "edit";
+    const activeTab = "vault"
+    
+    const { id } = req.params;
+
+    // obtain the right article
+    const article = testPosts.filter(c => c.id === id);
+        // This returns an array, the selected article is inside the array
+
+    const articleObj = article[0];
+    console.log(article[0])
+
+    res.render("blog-app.ejs", {
+        pageTitle: page,
+        activeTab: activeTab,
+        article: articleObj
+    })
+})
+
 
 
 // handling other tabs

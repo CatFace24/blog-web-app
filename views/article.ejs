@@ -31,9 +31,11 @@
                 </div>
             </div>
             <div class="post-actions flex gap-2 sm:gap-4">
-                <button class="icon-button icon-button--square icon-button--outline-icon">
-                    <span class="material-symbols-outlined" style="color: var(--icon-color);">edit</span>
-                </button>
+                <form action="/edit/<%=article.id%>" method="POST">
+                    <button class="icon-button icon-button--square icon-button--outline-icon">
+                        <span class="material-symbols-outlined" style="color: var(--icon-color);">edit</span>
+                    </button>
+                </form>
     
                 <form action="/vault/<%= article.id %>?_method=DELETE" method="POST">
                     <button class="icon-button icon-button--square icon-button--outline-icon">

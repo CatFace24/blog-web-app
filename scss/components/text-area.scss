@@ -2,15 +2,13 @@
 
 .textarea {
     @extend .text-input;
-    position: relative;
-    display: grid;
     width: 100%;
     accent-color: var(--darks-default);
 
     &__input {
-        height: 100%;
-
+        height: calc(100% - var(--input-line-height));
         border-radius: 5px;
+        width: 100%;
 
         --border-size: 1px;
         $size: var(--border-size);
@@ -27,6 +25,7 @@
         border-color: var(--purple-primary-200);
 
         color: var(--darks-default);
+        background: var(--yellow-sand-100);
 
         &::placeholder{
             // Hint

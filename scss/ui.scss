@@ -68,6 +68,13 @@
     }
 }
 
+.edit-page {
+    &__inputs {
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+    }
+}
+
 
 
 //   Small - mobile
@@ -117,6 +124,18 @@
             font-weight: regular;
             font-size: var(--subtext-font-size);
             line-height: var(--subtext-line-height);
+        }
+    }
+
+    .article-page {
+        &__wrapper {
+            gap: 1.5rem;
+        }
+    
+        &__top {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
     }
 }
