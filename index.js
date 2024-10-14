@@ -14,6 +14,8 @@ const port = 3000;
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
 app.use(methodOverride("_method"));
 
 
@@ -145,6 +147,37 @@ app.post("/edit/:id", (req, res) => {
         activeTab: activeTab,
         article: articleObj
     })
+})
+
+// Update post
+app.post("/update/:id", (req, res) => {
+    const { id } = req.params;
+    const button = req.body.submit;
+
+    if (button === "Cancel") {
+        res.redirect("/vault");
+    }
+    else {
+        var newTitle = req.body.title;
+        var newSubtitle = req.body.subtitle;
+    
+        var newContent = req.body.content;
+
+        // find index of post array that matches current article
+        var index = testPosts.findIndex(e => e.id === id);
+
+        // change values inside the array
+        testPosts[index].title = newTitle;
+        testPosts[index].subtitle = newSubtitle;
+        testPosts[index].content = newContent;
+
+        console.log(testPosts[index].title);
+        console.log(testPosts[index].subtitle );
+        console.log(testPosts[index].content);
+
+        res.redirect("/article/" + id);
+    }
+ 
 })
 
 

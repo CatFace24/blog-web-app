@@ -1,31 +1,33 @@
 <div class="edit-page__wrapper flex flex-col gap-4 sm:gap-10 h-full pb-[1.5rem] sm:pb-20">
     <h3>Edit story</h3>
-    <div class="edit-page__inputs px-0 sm:px-10 flex flex-col gap-4 sm:gap-[1.5rem] h-full">
-        <div class="text-input">       
-            <label>Title</label>
-            <input class="text-input__input" type="text" value="<%=article.title%>">
-        </div>
+        <form class="edit-page__inputs px-0 sm:px-10 flex flex-col gap-4 sm:gap-[1.5rem] h-full" action="/update/<%=article.id%>" method="POST">
 
-        <div class="text-input">       
-            <label>Subtitle</label>
-            <input class="text-input__input" type="text" value="<%=article.subtitle%>">
-        </div>
+            <div class="text-input">       
+                <label>Title</label>
+                <input class="text-input__input" type="text" id="title" name="title" value="<%=article.title%>">
+            </div>
 
-        <div class="textarea">       
-            <label>Your story</label>
-            <textarea class="textarea__input"><%=article.content%>
-            </textarea>
-        </div>
-    </div>
+            <div class="text-input">       
+                <label>Subtitle</label>
+                <input class="text-input__input" type="text" id="subtitle" name="subtitle" value="<%=article.subtitle%>">
+            </div>
 
-    <div class="edit-page__button-wrapper flex gap-4 justify-end">
-        <button class="button button--secondary">
-            <span class="button__text">Cancel</span>
-        </button>
+            <div class="textarea">       
+                <label>Your story</label>
+                <textarea class="textarea__input" name="content"><%=article.content%></textarea>
+            </div>
+            <div class="edit-page__button-wrapper flex gap-4 justify-end">
+                <a href="/vault">
+                    <button class="button button--secondary" value="Cancel" name="submit">
+                        <span class="button__text">Cancel</span>
+                    </button>
+                </a>
 
-        <button class="button button--primary">
-            <span class="button__text">Update</span>
-        </button>
-
+                    <button class="button button--primary" value="Update" name="submit">
+                        <span class="button__text">Update</span>
+                    </button>
+            </div>
+            
+        </form>
     </div>
 </div>
