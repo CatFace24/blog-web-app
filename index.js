@@ -116,17 +116,17 @@ app.get("/write", (req, res) => {
 let testPosts = [
 {
     id: uuidv4(),
-    title: "This is a Post Title",
-    subtitle: "This is a Post Subtitle.",
+    title: "Mad About Cats",
+    subtitle: "Everything you need to know about our feline friends",
     date: new Date("9 Oct 2024").toLocaleDateString(),
-    content: "Lorem ipsum dolor sit amet consectetur. Purus feugiat libero congue diam vel lectus. Diam elit sollicitudin nisl fermentum interdum nibh. Nisl viverra eget feugiat dolor leo. Facilisi sit amet non lobortis ultrices faucibus at."
+    content: "Cat, (Felis catus), domesticated member (felid) of the family Felidae. The family is generally divided between cats from the subfamily Pantherinae, which roar (including lions, tigers, and leopards), and cats from the subfamily Felinae, which purr instead (including cougars, bobcats, and domestic cats). According to the latest research, purring likely stems from a special pad within the folds of a cat’s vocal cords, which adds an additional layer of fatty tissue that enables the folds to vibrate (purr) at low frequencies. Domestic cats are characterized by retractable claws, powerful bodies, acute senses, long tails, and specialized teeth adapted for hunting prey."
 },
 {    
     id: uuidv4(),
-    title: "This is a Post Title2",
-    subtitle: "This is a Post Subtitle2.",
+    title: "All About Dogs",
+    subtitle: "Man's best friend",
     date: new Date("24 Sept 2024").toLocaleDateString(),
-    content: "Lorem ipsum dolor sit amet consectetur. Purus feugiat libero congue diam vel lectus. Diam elit sollicitudin nisl fermentum interdum nibh. Nisl viverra eget feugiat dolor leo. Facilisi sit amet non lobortis ultrices faucibus at."
+    content: "The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of the wolf. Also called the domestic dog, it was domesticated from an extinct population of wolves during the Late Pleistocene, over 14,000 years ago by hunter-gatherers, prior to the development of agriculture. The dog was the first species to be domesticated by humans. Experts estimate that due to their long association with humans, dogs have expanded to a large number of domestic individuals and gained the ability to thrive on a starch-rich diet that would be inadequate for other canids.[4]"
 }
 ];
 
