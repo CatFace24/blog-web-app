@@ -48,6 +48,47 @@ app.get("/vault", (req, res) => {
         });
 });
 
+app.get("/home", (req, res) => {
+    const page = "home";
+    const activeTab = "home"
+
+    res.render("blog-app.ejs", {
+        pageTitle : page,
+        activeTab: activeTab
+    });
+});
+
+app.get("/notifications", (req, res) => {
+    const page = "notifications";
+    const activeTab = "notifications"
+
+    res.render("blog-app.ejs", {
+        pageTitle : page,
+        activeTab: activeTab
+    });
+});
+
+app.get("/bookmarks", (req, res) => {
+    const page = "bookmarks";
+    const activeTab = "bookmarks"
+
+    res.render("blog-app.ejs", {
+        pageTitle : page,
+        activeTab: activeTab
+    });
+});
+
+app.get("/settings", (req, res) => {
+    const page = "settings"
+    const activeTab = "vault"
+
+    res.render("blog-app.ejs", {
+        pageTitle : page,
+        activeTab: activeTab
+    });
+});
+
+
 // write new post
 
 
@@ -259,9 +300,6 @@ app.post("/write", (req, res) => {
     res.render("blog-app.ejs", {
         pageTitle : page,
         activeTab: activeTab,
-        // handleTitleChange : handleTitleChange(),
-        // handleSubtitleChange: handleSubtitleChange(),
-        // handleContentChange: handleContentChange()
     });
 });
 

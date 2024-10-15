@@ -2,7 +2,7 @@
     <div class="nav-bar__icon-buttons">
 
         <form action="/home" method="POST">
-            <button class="icon-button icon-button--fill-icon <%= activeTab == 'home' ? 'icon-button--active' : '' %>"">
+            <button class="icon-button icon-button--fill-icon <%= activeTab == 'home' ? 'icon-button--active' : '' %>">
                 <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
             </button>
         </form>
@@ -35,7 +35,62 @@
         </button>
     </form>
 
-    <button class="icon-button icon-button--fill-icon nav-bar__menu">
+
+    <button class="icon-button icon-button--fill-icon nav-bar__menu" id="menu">
         <span class="material-symbols-outlined" style="color: var(--icon-color);">menu</span>
     </button>
-</div>   
+
+
+</div>
+
+<div class="nav-bar--mobile" id="nav-menu">
+    <a class="menu-item <%= activeTab == 'write' ? 'menu-item--active' : '' %>" href="/write">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">edit_square</span>
+        <span class="menu-item__text">Write a story</span>
+    </a>
+    
+    <a class="menu-item <%= activeTab == 'home' ? 'menu-item--active' : '' %>" href="/home">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">home</span>
+        <span class="menu-item__text">Home</span>
+    </a>
+    
+    <a class="menu-item <%= activeTab == 'notifications' ? 'menu-item--active' : '' %>" href="/notifications">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">notifications</span>
+        <span class="menu-item__text">Notifications</span>
+    </a>
+    <a class="menu-item <%= activeTab == 'bookmarks' ? 'menu-item--active' : '' %>" href="/bookmarks">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">bookmarks</span>
+        <span class="menu-item__text">Bookmarks</span>
+    </a>
+    <a class="menu-item <%= activeTab == 'vault' ? 'menu-item--active' : '' %>" href="/vault">
+        <span class="material-symbols-outlined" style="color: var(--icon-color);">article</span>
+        <span class="menu-item__text">Your Vault</span>
+    </a>
+    <a class="menu-item <%= activeTab == 'settings' ? 'menu-item--active' : '' %>" href="/settings">
+        <span class="material-symbols-outlined <%= activeTab == 'settings' ? 'icon-button--active' : '' %>" style="color: var(--icon-color);">settings</span>
+        <span class="menu-item__text">Settings</span>
+    </a>
+</div>
+
+<script>
+    // Client side script
+
+    // JQuery!! blessing
+    // no logic for clicking outside the doc yet tho
+    $('#menu').on('click',function(){
+        $('#menu').toggleClass('nav-bar__menu--active');
+        $('#nav-menu').toggleClass('nav-bar--mobile--open');
+    })
+
+    $(document).on('click'), function(event) {
+        var isNavShown = $('#nav-menu') === "12.5rem"
+        console.log(isNavShown);
+
+        if(isNavShown) {
+            $('#menu').removeClass('nav-bar__menu--active');
+            $('#nav-menu').removeClass('nav-bar--mobile--open');
+        }
+    }
+
+
+</script>
