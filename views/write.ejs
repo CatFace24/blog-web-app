@@ -1,5 +1,108 @@
-<div>
-    <h1>
-        Write a new story
-    </h1>
+<div class="edit-page__wrapper flex flex-col gap-4 sm:gap-10 h-full pb-[1.5rem] sm:pb-20">
+    <h3>Write a new story</h3>
+    <form class="edit-page__inputs px-0 sm:px-10 flex flex-col gap-4 sm:gap-[1.5rem] h-full" action="/publish-post" method="POST">
+
+        <div class="text-input">       
+            <label>Title</label>
+            <input class="text-input__input" type="text" id="title" name="title" placeholder="A Catchy Title">
+        </div>
+
+        <div class="text-input">       
+            <label>Subtitle</label>
+            <input class="text-input__input" type="text" id="subtitle" name="subtitle" placeholder="Some brief subtitle">
+        </div>
+
+        <div class="textarea">       
+            <label>Your story</label>
+            <textarea class="textarea__input" name="content" id="content" placeholder="Write your story..."></textarea>
+        </div>
+        <div class="edit-page__button-wrapper flex gap-4 justify-end">
+            <button class="button button--secondary" value="Cancel" id="cancel" name="submit">
+                 <span class="button__text">Cancel</span>
+            </button>
+
+            <button class="button button--primary" value="Publish" id="publish" name="submit" disabled>
+                <span class="button__text">Publish</span>
+            </button>
+        </div>
+        
+    </form>
 </div>
+
+
+<script>
+    // Client side script
+
+    var title = false;
+    var subtitle = false;
+    var content = false;
+ 
+    // event listeners
+    const newTitle = document.querySelector("#title");
+    const newSubtitle = document.querySelector("#subtitle");
+    const newContent = document.querySelector("#content");
+    
+    const publishButton = document.querySelector("#publish");
+
+ 
+    newTitle.addEventListener("input", (event) => {
+        handleTitleChange(event);
+    });
+
+    newSubtitle.addEventListener("input", (event) => {
+        handleSubtitleChange(event);
+    });
+
+    // adding event "input" instead of "change" will let it listen to any input you put into the field
+    newContent.addEventListener("input", (event) => {
+        handleContentChange(event);
+    });
+
+    // functions to validate if there is input
+    function handleTitleChange(e) {
+       if (e.target.value != "") {
+            title = true;
+       } else {
+            title = false;
+       }
+
+       handleButton();
+    }
+ 
+    function handleSubtitleChange(e) {
+        if (e.target.value != "") {
+            subtitle = true;
+       } else {
+            subtitle = false;
+       }
+
+       handleButton();
+    }
+ 
+    function handleContentChange(e) {
+        if (e.target.value != "") {
+            content = true;
+       } else {
+            content = false;
+       }
+
+       handleButton();
+
+    }
+
+    function handleButton () {
+
+        // button disabled?
+        var isButtonDisabled = !title || !subtitle || !content;
+
+        if (isButtonDisabled) {
+            console.log("button:" + isButtonDisabled)
+            publishButton.disabled = true;
+        }
+        else {
+            console.log("button:" + isButtonDisabled)
+            publishButton.disabled = false;
+        }
+    }
+    
+ </script>

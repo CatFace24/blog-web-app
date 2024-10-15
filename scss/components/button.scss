@@ -39,7 +39,8 @@
             background: var(--purple-primary-600);
         }
 
-        &:disabled {
+        &:disabled,
+        &--disabled {
             background: var(--darks-disabled);
             cursor: not-allowed;
         }

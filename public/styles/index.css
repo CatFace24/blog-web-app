@@ -210,7 +210,7 @@ label:disabled {
 .button--primary:active {
   background: var(--purple-primary-600);
 }
-.button--primary:disabled {
+.button--primary:disabled, .button--primary--disabled {
   background: var(--darks-disabled);
   cursor: not-allowed;
 }

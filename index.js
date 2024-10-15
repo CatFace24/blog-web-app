@@ -12,12 +12,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
 
 app.use(methodOverride("_method"));
-
 
 // handling GET requests
 
@@ -48,6 +47,29 @@ app.get("/vault", (req, res) => {
         activeTab: activeTab
         });
 });
+
+// write new post
+
+
+app.get("/write", (req, res) => {
+    const page = "write";
+    const activeTab = "write"
+
+    const titleInput = req.body.title;
+    const subtitleInput = req.body.subtitle;
+    const contentInput = req.body.content;
+
+    // document.getElementById("title").addEventListener("change", handleTitleChange());
+
+
+    res.render("blog-app.ejs", {
+        pageTitle : page,
+        activeTab: activeTab,
+        // handleTitleChange : handleTitleChange(),
+        // handleSubtitleChange: handleSubtitleChange(),
+        // handleContentChange: handleContentChange()
+        });
+})
 
 // Posts data
 let testPosts = [
@@ -98,27 +120,43 @@ app.get("/article/:id", (req, res) => {
 
 });
 
-// Create post
+
+// Re-direct to /write post
 app.get("/new-post", (req, res) => {
-    // const id = req.body;
-
-    // dummy data for new post
-    const title = "New title";
-    const subtitle = "New subtitle";
-    const date = new Date().toLocaleDateString();
-    const content = "Dummy content";
-
-    testPosts.unshift(
-        { 
-            id: uuidv4(),
-            title: title,
-            subtitle: subtitle,
-            date: date,
-            content: content
-        });
-
-    res.redirect("/vault");
+    res.redirect("/write");
 });
+
+// Publish new post
+app.post("/publish-post", (req, res) => {
+
+    const button = req.body.submit;
+
+    if (button === "Cancel") {
+        res.redirect("/vault");
+    }
+    else {
+        var title = req.body.title;
+        var subtitle = req.body.subtitle;
+        var date = new Date().toLocaleDateString();
+        var content = req.body.content;
+        var id = uuidv4();
+
+         // push new item into beginning of array
+         testPosts.unshift(
+            { 
+                id: id,
+                title: title,
+                subtitle: subtitle,
+                date: date,
+                content: content
+            });
+
+        res.redirect("/article/" + id);
+    }
+
+
+       
+})
 
 // Delete post
 app.delete("/vault/:id", (req, res) => {
@@ -220,7 +258,10 @@ app.post("/write", (req, res) => {
 
     res.render("blog-app.ejs", {
         pageTitle : page,
-        activeTab: activeTab
+        activeTab: activeTab,
+        // handleTitleChange : handleTitleChange(),
+        // handleSubtitleChange: handleSubtitleChange(),
+        // handleContentChange: handleContentChange()
     });
 });
 
