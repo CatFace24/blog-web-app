@@ -1,11 +1,10 @@
 ### Background
 This is a responsive blog web app done after finishing a portion of the [Web Dev Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=ST2MT110724BNEW) in Udemy
 
-### Step 1
-Run `npm install`
-
-### Step 2
-Run `npm run dev`
+### How to run this file:
+1) Run `npm install`
+2) Run `npm run dev`
+3) Interact, create a new story, or editing existing ones :)
 
 ### Screenshots
 <img width="1376" alt="image" src="https://github.com/user-attachments/assets/73c65a06-0ecd-47b1-942d-05893bb33bb9">
